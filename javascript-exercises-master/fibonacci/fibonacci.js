@@ -39,6 +39,5 @@ const fibonacci = function (x) {
    
 
 
-console.log(fibonacci('1'));
 
 module.exports = fibonacci
