@@ -1,77 +1,59 @@
-const calculator = require ('./calculator.js');
+const add = function(x,y) {
+	return x + y;
+};
 
-describe('add', function() {
-	it('adds 0 and 0', function() {
-		expect(calculator.add(0,0)).toEqual(0);
-	});
+const subtract = function(x,y) {
+	return x - y;
+};
 
-	it('adds 2 and 2', function() {
-		expect(calculator.add(2,2)).toEqual(4);
-	});
+const sum = function(array) {
+  let sum = 0;
+	for(let i = 0; i < array.length; i++)
+  {
+    sum += array[i];
+  }
 
-	it('adds positive numbers', function() {
-		expect(calculator.add(2,6)).toEqual(8);
-	});
-});
+  return sum;
+};
 
-describe('subtract', function() {
-	it('subtracts numbers', function() {
-		expect(calculator.subtract(10,4)).toEqual(6);
-	});
-});
+const multiply = function(array) {
+  multiplet = array[0]
+  for(let i = 1; i < array.length; i++)
+  {
+    multiplet *= array[i];
+  }
+  return multiplet;
+};
 
-describe('sum', function() {
-	it('computes the sum of an empty array', function() {
-		expect(calculator.sum([])).toEqual(0);
-	});
+const power = function(x,y) {
+powered = x
+for (i = 1; i < y; i++)
+{
+  powered *= x;
+}
 
-	it('computes the sum of an array of one number', function() {
-		expect(calculator.sum([7])).toEqual(7);
-	});
+return powered;
+};
 
-	it('computes the sum of an array of two numbers', function() {
-		expect(calculator.sum([7,11])).toEqual(18);
-	});
+const factorial = function(x) {
+  let factorialNum = x + 1
+  let factorialDen = x +1;
+  for (i = x; i > 0; i--)
+  {
+    factorialNum *= i;
+  }
 
-	it('computes the sum of an array of many numbers', function() {
-		expect(calculator.sum([1,3,5,7,9])).toEqual(25);
-	});
-});
+  let factorial = factorialNum/factorialDen;
 
-describe('multiply', function() {
-	it('multiplies two numbers', function() {
-		expect(calculator.multiply([2,4])).toEqual(8);
-	});
+  return factorial;
+	
+};
 
-	it('multiplies several numbers', function() {
-		expect(calculator.multiply([2,4,6,8,10,12,14])).toEqual(645120);
-	});
-});
-
-describe('power', function() {
-	it('raises one number to the power of another number', function() {
-		expect(calculator.power(4,3)).toEqual(64); // 4 to third power is 64
-	});
-});
-
-describe('factorial', function() {
-	it('computes the factorial of 0', function() {
-		expect(calculator.factorial(0)).toEqual(1); // 0! = 1
-	});
-
-	it('computes the factorial of 1', function() {
-		expect(calculator.factorial(1)).toEqual(1);
-	});
-
-	it('computes the factorial of 2', function() {
-		expect(calculator.factorial(2)).toEqual(2);
-	});
-
-	it('computes the factorial of 5', function() {
-		expect(calculator.factorial(5)).toEqual(120);
-	});
-
-	it('computes the factorial of 10', function() {
-		expect(calculator.factorial(10)).toEqual(3628800);
-	});
-});
+module.exports = {
+  add,
+  subtract,
+  sum,
+  multiply,
+  power,
+  factorial
+};
